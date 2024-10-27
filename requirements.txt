@@ -1,0 +1,13 @@
+google_api_python_client
+youtube_transcript_api
+streamlit
+joblib
+nltk
+scikit_learn
+selenium
+pandas
+numpy 
+webdriver_manager
+undetected_chromedriver
+setuptools
+gdown

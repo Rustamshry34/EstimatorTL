@@ -12,6 +12,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 #import undetected_chromedriver as UC
 #from playwright.sync_api import sync_playwright
+import chromedriver_autoinstaller
 import pandas as pd
 from io import StringIO
 import joblib
@@ -109,12 +110,14 @@ def get_video_details(video_id):
 
 def check_sponsorship_disclaimer(video_url):
 
+    chromedriver_autoinstaller.install() 
+    
     chrome_options = Options()
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
 
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+    driver = webdriver.Chrome(options=chrome_options)
 
     driver.get(video_url)
 

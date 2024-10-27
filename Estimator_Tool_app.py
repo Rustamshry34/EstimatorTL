@@ -11,7 +11,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import undetected_chromedriver as UC
-from playwright.sync_api import sync_playwright
+#from playwright.sync_api import sync_playwright
 import pandas as pd
 from io import StringIO
 from pyngrok import ngrok

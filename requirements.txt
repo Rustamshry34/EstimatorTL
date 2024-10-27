@@ -11,4 +11,4 @@ webdriver_manager
 undetected_chromedriver
 setuptools
 gdown
-pyngrok
+chromedriver_autoinstaller

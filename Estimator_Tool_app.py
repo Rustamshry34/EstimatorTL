@@ -41,8 +41,6 @@ model = joblib.load('sentiment_model.pkl')
 
 lemmatizer = WordNetLemmatizer()
 
-options = Options()
-
 file_id = "1iSkNMFXU5BXNNE9OyubvmSEsCFDRk-5w"
 destination = "tfidf_vectorizer.pkl"
 
@@ -117,7 +115,7 @@ def check_sponsorship_disclaimer(video_url):
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
 
-    driver = webdriver.Chrome(options=chrome_options)
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 
     driver.get(video_url)
 

@@ -32,8 +32,8 @@ nltk.download('wordnet')
 nltk.download('punkt_tab')
 
 
-#api_key = 'AIzaSyBmM-Z_PfxgXwOlnGNff4OzWCASjMIrpnw'
-api_key ='AIzaSyBePYCfIvOmeYmyCGmWrLIRObVBk5HOJXs'
+api_key = 'AIzaSyBmM-Z_PfxgXwOlnGNff4OzWCASjMIrpnw'
+#api_key ='AIzaSyBePYCfIvOmeYmyCGmWrLIRObVBk5HOJXs'
 youtube = build('youtube', 'v3', developerKey=api_key)
 
 model = joblib.load('sentiment_model.pkl')
@@ -110,15 +110,14 @@ def get_video_details(video_id):
 
 
 def check_sponsorship_disclaimer(video_url):
-
-    chromedriver_autoinstaller.install() 
     
-    chrome_options = Options()
-    chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-
-    driver = webdriver.Chrome(options=chrome_options)
+    C_options = Options()
+    C_options.add_argument('--headless') 
+    C_options.add_argument('--no-sandbox')
+    C_options.add_argument('--disable-dev-shm-usage')
+        
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service, options=C_options)
 
     driver.get(video_url)
 
